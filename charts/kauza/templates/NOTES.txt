@@ -18,10 +18,10 @@ It means that the endpoints configuration from the values is ignored.
 ####               NOTICE: Telemetry is enabled                           ####
 ##############################################################################
 
-Telemetry is enabled. Visit our website to learn more: https://rasa.com/docs/rasa/telemetry/telemetry/
+Telemetry is enabled. Visit our website to learn more: https://kauzaafrica.com/docs/rasa/telemetry/telemetry/
 {{- end }}
 
-{{- if and (gt (.Values.replicaCount | int) 1) (eq (include "rasa.endpoints.lockStore.enabled" .) "false") }}
+{{- if and (gt (.Values.replicaCount | int) 1) (eq (include "kauza.endpoints.lockStore.enabled" .) "false") }}
 ##############################################################################
 ####               WARNING: The Lock Store is disabled                    ####
 ##############################################################################
@@ -30,7 +30,7 @@ You use more than 1 replica, in such case you should consider using a Lock Store
 
 You can enable the Lock Store by setting `redis.install` to `true` and `applicationSettings.endpoints.lockStore.enabled` to `true`.
 
-Visit our website to learn more: https://rasa.com/docs/rasa/lock-stores
+Visit our website to learn more: https://kauzaafrica.com/docs/rasa/lock-stores
 {{- end }}
 
 {{- if and .Values.ingress.enabled .Values.nginx.enabled }}
@@ -47,7 +47,7 @@ You can disable Ingress by setting the `ingress.enabled` parameter to `false`
 You can disable NGINX by setting the `nginx.enabled` parameter to `false`
 {{- end }}
 
-{{- if and (eq (include "rasa.endpoints.eventBroker.enabled" .) "false") (eq (include "rasa-common.rabbitmq.available" .) "true") }}
+{{- if and (eq (include "kauza.endpoints.eventBroker.enabled" .) "false") (eq (include "rasa-common.rabbitmq.available" .) "true") }}
 ##############################################################################
 ####               WARNING: Event Broker misconfiguration                 ####
 ##############################################################################
@@ -58,7 +58,7 @@ You can enable Event Broker by setting the `applicationSettings.endpoints.eventB
 
 {{- end }}
 
-{{- if and (eq (include "rasa.endpoints.lockStore.enabled" .) "false") (eq (include "rasa-common.redis.available" .) "true") }}
+{{- if and (eq (include "kauza.endpoints.lockStore.enabled" .) "false") (eq (include "rasa-common.redis.available" .) "true") }}
 ##############################################################################
 ####               WARNING: Lock Store misconfiguration                   ####
 ##############################################################################
@@ -69,7 +69,7 @@ You can enable Event Broker by setting the `applicationSettings.endpoints.lockSt
 
 {{- end }}
 
-{{- if and (eq (include "rasa.endpoints.trackerStore.enabled" .) "false") (eq (include "rasa-common.psql.available" .) "true") }}
+{{- if and (eq (include "kauza.endpoints.trackerStore.enabled" .) "false") (eq (include "rasa-common.psql.available" .) "true") }}
 ##############################################################################
 ####               WARNING: Tracker Store misconfiguration                ####
 ##############################################################################
@@ -198,10 +198,10 @@ Additional components:
     PostgreSQL:
       Installed:  {{ .Values.postgresql.install }}
       External:   {{ .Values.postgresql.external.enabled }}
-{{- if (eq (include "rasa.initialModel.download" .) "true") }}
+{{- if (eq (include "kauza.initialModel.download" .) "true") }}
 
 Loaded model: {{ .Values.applicationSettings.initialModel }}
-{{- else if eq (include "rasa.initialModel.train" .) "true" }}
+{{- else if eq (include "kauza.initialModel.train" .) "true" }}
 
 An initial model will be trained
 {{- end -}}
