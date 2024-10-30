@@ -9,7 +9,7 @@ fullnameOverride: ""
 
 # -- Registry to use for all Rasa images (default docker.io)
 ## DockerHub - use docker.io/rasa
-registry: docker.io/rasa
+registry: docker.io/wingrammer
 
 applicationSettings:
   # -- Enable debug mode
@@ -50,6 +50,78 @@ applicationSettings:
     #    verify: "rasa"
     #    secret: "<SECRET>"
     #    page-access-token: "<PAGE-ACCESS-TOKEN>"
+      rest:
+      #  # you don't need to provide anything here - this channel doesn't
+      #  # require any credentials
+
+
+      facebook:
+        verify: "<verify>"
+        secret: "<your secret>"
+        page-access-token: "<your page access token>"
+
+      whatsapp:
+        verify: "<verify>"
+        secret: "<your secret>"
+        page-access-token: "<your page access token>"
+        phone-number-id: "<your phone number id>"
+
+
+      slack:
+        slack_token: "<your slack token>"
+        slack_channel: "<the slack channel>"
+        slack_signing_secret: "<your slack signing secret>"
+
+      socketio:
+        user_message_evt: <event name for user message>
+        bot_message_evt: <event name for bot messages>
+        session_persistence: <true/false>
+
+      mattermost:
+        url: "https://<mattermost instance>/api/v4"
+        token: "<bot token>"
+        webhook_url: "<callback URL>"
+
+      botframework:
+        app_id: "YOUR-APP-ID"
+        app_password: "YOUR-APP-PASSWORD"
+
+      # rasa_chat:
+      #   url: "http://localhost:5002/api"
+      #   token: "YOUR-TOKEN"
+      #   room: "YOUR-ROOM-ID"
+
+      # webexteams:
+      #   access_token: "ADD-YOUR-BOT-ACCESS-TOKEN"
+      #   room: "YOUR-WEBEXTEAMS-ROOM-ID"
+
+      rocketchat:
+        url: "https://chat.example.com/api/v1"
+        token: "YOUR-TOKEN"
+        room: "YOUR-ROOM-ID"
+
+      # socketio:
+        # user_message_evt: "user_message"
+        # bot_message_evt: "bot_message"
+        # session_persistence: false
+
+      twilio:
+        account_sid: "ACbc2dxxxxxxxxxxxx19d54bdcd6e41186"
+        auth_token: "e231c197493a7122d475b4xxxxxxxxxx"
+        twilio_number: "+440123456789"
+
+      twilio_voice:
+        account_sid: "ACbc2dxxxxxxxxxxxx19d54bdcd6e41186"
+        auth_token: "e231c197493a7122d475b4xxxxxxxxxx"
+        twilio_number: "+440123456789"
+        outbound_number: "+440123456789"
+
+      telegram:
+        access_token: "7473184940:AAEZEYkg9rN0eFczHuGhaSXsfgf7sEuWE-s"
+        verify: "iamkaara_bot"
+        webhook_url: "http://localhost:5005/webhooks/telegram/webhook/default/agents/default"
+
+  ## Note: this endpoints configuration is ignored if `applicationSettings.rasaX.useConfigEndpoint=true`
 
   telemetry:
     # -- Enable telemetry
@@ -89,16 +161,16 @@ applicationSettings:
       enabled: true
 
       # -- Tracker Store type
-      type: sql
+      type: mongod
 
       # -- The dialect used to communicate with your SQL backend
-      dialect: "postgresql"
+      # dialect: "postgresql"
 
       # -- URL of your SQL server
       url: ${DB_HOST}
 
       # -- Port of your SQL server
-      port: ${DB_PORT}
+      # port: ${DB_PORT}
 
       # -- The username which is used for authentication
       username: ${DB_USER}
@@ -111,7 +183,7 @@ applicationSettings:
 
       # -- Create the database for the tracker store.
       # If `false` the tracker store database must have been created previously.
-      login_db: ${DB_DATABASE}
+      # login_db: ${DB_DATABASE}
 
     ## Rasa uses a ticket lock mechanism to ensure that incoming messages for a given conversation ID
     ## are processed in the right order, and locks conversations while messages are actively processed.
@@ -144,7 +216,7 @@ applicationSettings:
     ## All environment variables used as values are added to the rasa-oss container automatically if `rabbitmq.install=true`.
     eventBroker:
       # -- Enable endpoint for Event Broker
-      enabled: false
+      enabled: true
 
       # -- Event Broker
       type: "pika"
@@ -219,10 +291,10 @@ extraEnv: []
 ## Define the rasa image to work with
 image:
   # -- Rasa Open Source image name to use (relative to `registry`)
-  name: rasa
+  name: kauza
 
   # -- Rasa Open Source image tag to use
-  tag: "3.2.6"
+  tag: "latest"
   # -- Override default registry + image.name for Rasa Open Source
   repository: ""
 
@@ -232,7 +304,9 @@ image:
   # -- Rasa Open Source repository pullSecret
   ## See https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   pullSecrets: []
-  #   - name: "<SECRET>"
+    - name: "regcred"
+    
+
 
 serviceAccount:
   # -- Specifies whether a service account should be created
