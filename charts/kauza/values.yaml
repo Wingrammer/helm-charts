@@ -288,10 +288,10 @@ extraEnv:
     value: password
   - name: RABBITMQ_USERNAME
     value: user
-  - name: RABBITMQ_HOST
-    value: localhost
-  - name: RABBITMQ_PORT
-    value: "5672"
+  # - name: RABBITMQ_HOST
+  #   value: localhost
+  # - name: RABBITMQ_PORT
+  #   value: "5672"
   - name: DB_HOST
     value: mongodb+srv://winnerkonou:yyunudGbqqGvAGqp@cluster0.tx3sau5.mongodb.net/?retryWrites=true&w=majority
   - name: DB_USER
@@ -300,10 +300,10 @@ extraEnv:
     value: yyunudGbqqGvAGqp
   - name: DB_DATABASE
     value: kauza
-  - name: REDIS_HOST
-    value: localhost
-  - name: REDIS_PORT
-    value: "6379"
+  # - name: REDIS_HOST
+  #   value: localhost
+  # - name: REDIS_PORT
+  #   value: "6379"
   - name: REDIS_PASSWORD
     value: redis-password
   - name: REDIS_DB
@@ -606,7 +606,7 @@ redis:
   ## This section is not a part of the Redis subchart
   external:
     # -- Determine if use an external Redis host
-    enabled: true
+    enabled: false
 
     # -- External Redis hostname
     ## The host value is accessible via the `${REDIS_HOST}` environment variable
@@ -636,7 +636,7 @@ rabbitmq:
   ## This section is not a part of the RabbitMQ subchart
   external:
     # -- Determine if use an external RabbitMQ host
-    enabled: true
+    enabled: false
 
     # -- External RabbitMQ hostname
     ## The host value is accessible via the `${RABBITMQ_HOST}` environment variable
@@ -736,7 +736,7 @@ rasa-action-server:
 
   external:
     # -- Determine if external URL is used
-    enabled: true
+    enabled: false
     # -- External URL to Rasa Action Server
     url: ""
 
@@ -748,6 +748,6 @@ duckling:
 
   external:
     # -- Determine if external URL is used
-    enabled: true
+    enabled: false
     # -- External URL to Duckling
     url: ""
