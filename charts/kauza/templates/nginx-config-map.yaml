@@ -9,11 +9,11 @@ data:
 {{- if .Values.nginx.customConfiguration -}}
 {{- toYaml .Values.nginx.customConfiguration | nindent 2 }}
 {{- else }}
-  rasa.nginx.conf: |
-{{- include "rasa.nginx.rasa.conf" . | nindent 4 }}
+  kauza.nginx.conf: |
+{{- include "kauza.nginx.kauza.conf" . | nindent 4 }}
   nginx.conf: |
-{{- include "rasa.nginx.conf" . | nindent 4 }}
+{{- include "kauza.nginx.conf" . | nindent 4 }}
   ssl.conf: |
-{{- include "rasa.nginx.ssl.conf" . | nindent 4 }}
+{{- include "kauza.nginx.ssl.conf" . | nindent 4 }}
 {{- end -}}
 {{- end }}

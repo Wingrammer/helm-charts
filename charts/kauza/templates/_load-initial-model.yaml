@@ -1,4 +1,4 @@
-{{- define "rasa.downloadInitialModel.initContainer" -}}
+{{- define "kauza.downloadInitialModel.initContainer" -}}
 - name: download-initial-model
   image: "alpine"
   command: ["/bin/sh", "-c"]
@@ -9,7 +9,7 @@
       name: models
 {{- end -}}
 
-{{- define "rasa.trainInitialModel.initContainer" -}}
+{{- define "kauza.trainInitialModel.initContainer" -}}
 - name: train-initial-model
   image: "{{ include "rasa-common.images.image" . }}"
   imagePullPolicy: {{ .Values.image.pullPolicy }}
@@ -30,14 +30,14 @@
       name: app-dir
 {{- end -}}
 
-{{- define "rasa.initialModel.initContainer.volumes" -}}
+{{- define "kauza.initialModel.initContainer.volumes" -}}
 - name: models
   emptyDir: {}
 - name: app-dir
   emptyDir: {}
 {{- end -}}
 
-{{- define "rasa.initialModel.initContainer.volumeMounts" -}}
+{{- define "kauza.initialModel.initContainer.volumeMounts" -}}
 - mountPath: /app/models
   name: models
 {{- end -}}

@@ -1,7 +1,7 @@
 {{/*
 Determine rasa server to run with arguments
 */}}
-{{- define "rasa.rasa.server.type" -}}
+{{- define "kauza.kauza.server.type" -}}
 {{- if .Values.applicationSettings.rasaX.enabled -}}
 - x
 - --no-prompt
@@ -22,7 +22,7 @@ Determine rasa server to run with arguments
 {{/*
 Determine if a model server endpoint is used
 */}}
-{{- define "rasa.endpoints.models.enabled" -}}
+{{- define "kauza.endpoints.models.enabled" -}}
 {{- if and (not .Values.applicationSettings.rasaX.useConfigEndpoint) .Values.applicationSettings.endpoints.models.enabled (not .Values.applicationSettings.endpoints.models.useRasaXasModelServer.enabled) -}}
 {{- print "true" -}}
 {{- else -}}
@@ -33,7 +33,7 @@ Determine if a model server endpoint is used
 {{/*
 Determine if Tracker Store is used
 */}}
-{{- define "rasa.endpoints.trackerStore.enabled" -}}
+{{- define "kauza.endpoints.trackerStore.enabled" -}}
 {{- if and (not .Values.applicationSettings.rasaX.useConfigEndpoint) .Values.applicationSettings.endpoints.trackerStore.enabled  -}}
 {{- print "true" -}}
 {{- else -}}
@@ -44,7 +44,7 @@ Determine if Tracker Store is used
 {{/*
 Determine if Lock Store is used
 */}}
-{{- define "rasa.endpoints.lockStore.enabled" -}}
+{{- define "kauza.endpoints.lockStore.enabled" -}}
 {{- if and (not .Values.applicationSettings.rasaX.useConfigEndpoint) .Values.applicationSettings.endpoints.lockStore.enabled  -}}
 {{- print "true" -}}
 {{- else -}}
@@ -56,7 +56,7 @@ Determine if Lock Store is used
 {{/*
 Determine if Lock Store is used
 */}}
-{{- define "rasa.endpoints.eventBroker.enabled" -}}
+{{- define "kauza.endpoints.eventBroker.enabled" -}}
 {{- if and (not .Values.applicationSettings.rasaX.useConfigEndpoint) .Values.applicationSettings.endpoints.eventBroker.enabled  -}}
 {{- print "true" -}}
 {{- else -}}
@@ -67,7 +67,7 @@ Determine if Lock Store is used
 {{/*
 Determine if credential configuration for channel connectors is used
 */}}
-{{- define "rasa.credentials.enabled" -}}
+{{- define "kauza.credentials.enabled" -}}
 {{- if and (not .Values.applicationSettings.rasaX.useConfigEndpoint) .Values.applicationSettings.credentials.enabled  -}}
 {{- print "true" -}}
 {{- else -}}
@@ -78,7 +78,7 @@ Determine if credential configuration for channel connectors is used
 {{/*
 Determine if a initial model should be downloaded
 */}}
-{{- define "rasa.initialModel.download" -}}
+{{- define "kauza.initialModel.download" -}}
 {{- if and (not .Values.applicationSettings.rasaX.useConfigEndpoint) (not .Values.applicationSettings.endpoints.models.enabled) (not (empty .Values.applicationSettings.initialModel)) (not .Values.applicationSettings.trainInitialModel) -}}
 {{- print "true" -}}
 {{- else -}}
@@ -89,7 +89,7 @@ Determine if a initial model should be downloaded
 {{/*
 Determine if a initial model should be trained
 */}}
-{{- define "rasa.initialModel.train" -}}
+{{- define "kauza.initialModel.train" -}}
 {{- if and (not .Values.applicationSettings.rasaX.useConfigEndpoint) (not .Values.applicationSettings.endpoints.models.enabled) .Values.applicationSettings.trainInitialModel -}}
 {{- print "true" -}}
 {{- else -}}

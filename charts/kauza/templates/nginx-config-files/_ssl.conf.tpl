@@ -1,4 +1,4 @@
-{{- define "rasa.nginx.ssl.conf" -}}
+{{- define "kauza.nginx.ssl.conf" -}}
 {{- if and .Values.nginx.enabled .Values.nginx.tls.enabled (or .Values.nginx.tls.generateSelfSignedCert .Values.nginx.tls.certificateSecret) }}
 listen                  {{ .Values.nginx.tls.port }} ssl;
 

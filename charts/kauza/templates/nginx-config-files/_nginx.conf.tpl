@@ -1,4 +1,4 @@
-{{- define "rasa.nginx.conf" -}}
+{{- define "kauza.nginx.conf" -}}
 worker_processes  auto;
 worker_rlimit_nofile 10000;
 error_log /dev/stdout info;

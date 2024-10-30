@@ -1,4 +1,4 @@
-{{- define "rasa.nginx.rasa.conf" -}}
+{{- define "kauza.nginx.kauza.conf" -}}
 upstream rasa-oss {
   server 127.0.0.1:{{ .Values.applicationSettings.port }} max_fails=0;
 }

@@ -1,4 +1,4 @@
-{{- define "rasa.containers.volumes" -}}
+{{- define "kauza.containers.volumes" -}}
 - name: config-dir
   emptyDir: {}
 {{- if not .Values.applicationSettings.rasaX.useConfigEndpoint }}
@@ -13,9 +13,9 @@
 {{- end }}
 {{- if .Values.nginx.enabled }}
 {{- if and .Values.nginx.tls.enabled (or .Values.nginx.tls.generateSelfSignedCert .Values.nginx.tls.certificateSecret) }}
-- name: "{{ include "rasa.nginx.tls.secret.name" . }}"
+- name: "{{ include "kauza.nginx.tls.secret.name" . }}"
   secret:
-    secretName: "{{ include "rasa.nginx.tls.secret.name" . }}"
+    secretName: "{{ include "kauza.nginx.tls.secret.name" . }}"
     items:
       - key: "cert.pem"
         path: "cert.pem"
@@ -28,8 +28,8 @@
     items:
       - key: "nginx.conf"
         path: "nginx.conf"
-      - key: "rasa.nginx.conf"
-        path: "rasa.nginx.conf"
+      - key: "kauza.nginx.conf"
+        path: "kauza.nginx.conf"
         {{- if and .Values.nginx.tls.enabled (or .Values.nginx.tls.generateSelfSignedCert .Values.nginx.tls.certificateSecret) }}
       - key: "ssl.conf"
         path: "ssl.conf"
@@ -38,7 +38,7 @@
 {{- end -}}
 
 
-{{- define "rasa.containers.volumeMounts" -}}
+{{- define "kauza.containers.volumeMounts" -}}
 # Mount the temporary directory for the Rasa global configuration
 - name: "config-dir"
   mountPath: "/.config"

@@ -1,4 +1,4 @@
-{{- define "rasa.nginx.sidecar" -}}
+{{- define "kauza.nginx.sidecar" -}}
 {{- if and .Values.nginx.enabled }}
 - name: nginx
   image: {{ printf "%s:%s" .Values.nginx.image.name .Values.nginx.image.tag }}
@@ -22,15 +22,15 @@
   volumeMounts:
 {{- if and .Values.nginx.tls.enabled (or .Values.nginx.tls.generateSelfSignedCert .Values.nginx.tls.certificateSecret) }}
   - mountPath: "/etc/nginx/certs"
-    name: {{ include "rasa.nginx.tls.secret.name" . }}
+    name: {{ include "kauza.nginx.tls.secret.name" . }}
     readOnly: true
 {{- end }}
   - mountPath: "/etc/nginx/nginx.conf"
     subPath: "nginx.conf"
     name: {{ include "rasa-common.names.fullname" . }}-nginx-config
     readOnly: true
-  - mountPath: "/etc/nginx/conf.d/rasa.nginx.conf"
-    subPath: "rasa.nginx.conf"
+  - mountPath: "/etc/nginx/conf.d/kauza.nginx.conf"
+    subPath: "kauza.nginx.conf"
     name: {{ include "rasa-common.names.fullname" . }}-nginx-config
     readOnly: true
 {{- if .Values.nginx.tls.enabled }}

@@ -1,25 +1,25 @@
-{{- define "rasa.containers.env" -}}
-{{- if and (eq (include "rasa.endpoints.models.enabled" .) "true") .Values.applicationSettings.endpoints.models.token }}
+{{- define "kauza.containers.env" -}}
+{{- if and (eq (include "kauza.endpoints.models.enabled" .) "true") .Values.applicationSettings.endpoints.models.token }}
 - name: MODEL_SERVER_TOKEN
   valueFrom:
     secretKeyRef:
       name: {{ include "rasa-common.names.fullname" . }}
       key: model-server-token
 {{- end }}
-{{- if or (and (eq (include "rasa.endpoints.trackerStore.enabled" .) "true") (eq (include "rasa-common.psql.available" .) "true")) }}
+{{- if or (and (eq (include "kauza.endpoints.trackerStore.enabled" .) "true") (eq (include "rasa-common.psql.available" .) "true")) }}
 {{ include "rasa-common.psql.envs" . }}
 {{- end }}
-{{- if and (eq (include "rasa.endpoints.lockStore.enabled" .) "true") (eq (include "rasa-common.redis.available" .) "true") }}
+{{- if and (eq (include "kauza.endpoints.lockStore.enabled" .) "true") (eq (include "rasa-common.redis.available" .) "true") }}
 {{ include "rasa-common.redis.envs" . }}
 {{- end }}
-{{- if and (eq (include "rasa.endpoints.eventBroker.enabled" .) "true") (eq (include "rasa-common.rabbitmq.available" .) "true") }}
+{{- if and (eq (include "kauza.endpoints.eventBroker.enabled" .) "true") (eq (include "rasa-common.rabbitmq.available" .) "true") }}
 {{ include "rasa-common.rabbitmq.envs" . }}
 {{- end }}
-{{- if eq (include "rasa.endpoints.action" .) "true" }}
-{{ include "rasa.actionServer.envs" . }}
+{{- if eq (include "kauza.endpoints.action" .) "true" }}
+{{ include "kauza.actionServer.envs" . }}
 {{- end }}
-{{- if eq (include "rasa.endpoints.duckling" .) "true" }}
-{{ include "rasa.duckling.envs" . }}
+{{- if eq (include "kauza.endpoints.duckling" .) "true" }}
+{{ include "kauza.duckling.envs" . }}
 {{- end }}
 - name: "RASA_TELEMETRY_ENABLED"
   value: {{ .Values.applicationSettings.telemetry.enabled | quote }}

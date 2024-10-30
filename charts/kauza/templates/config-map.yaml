@@ -7,7 +7,7 @@ metadata:
     {{- include "rasa-common.labels.standard" . | nindent 4 }}
 data:
   credentials: |
-{{- if eq (include "rasa.credentials.enabled" .) "true" }}
+{{- if eq (include "kauza.credentials.enabled" .) "true" }}
     {{- with .Values.applicationSettings.credentials.additionalChannelCredentials }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
@@ -17,7 +17,7 @@ data:
       url: {{ .Values.applicationSettings.rasaX.url }}/api
 {{- end }}
   endpoints: |
-{{- if eq (include "rasa.endpoints.models.enabled" .) "true" }}
+{{- if eq (include "kauza.endpoints.models.enabled" .) "true" }}
     models:
       url: {{ .Values.applicationSettings.endpoints.models.url }}
       token: ${MODEL_SERVER_TOKEN}
@@ -28,7 +28,7 @@ data:
       token: ${RASA_X_TOKEN}
       wait_time_between_pulls: {{ .Values.applicationSettings.endpoints.models.waitTimeBetweenPulls }}
 {{- end }}
-{{- if eq (include "rasa.endpoints.trackerStore.enabled" .) "true"  }}
+{{- if eq (include "kauza.endpoints.trackerStore.enabled" .) "true"  }}
     tracker_store:
     {{- range $key, $value := .Values.applicationSettings.endpoints.trackerStore }}
       {{- if not (eq $key "enabled") }}
@@ -41,7 +41,7 @@ data:
     {{- end }}
     {{- end }}
 {{- end }}
-{{- if eq (include "rasa.endpoints.lockStore.enabled" .) "true" }}
+{{- if eq (include "kauza.endpoints.lockStore.enabled" .) "true" }}
     lock_store:
     {{- range $key, $value := .Values.applicationSettings.endpoints.lockStore }}
       {{- if not (eq $key "enabled") }}
@@ -49,7 +49,7 @@ data:
       {{- end }}
     {{- end }}
 {{- end }}
-{{- if eq (include "rasa.endpoints.eventBroker.enabled" .) "true" }}
+{{- if eq (include "kauza.endpoints.eventBroker.enabled" .) "true" }}
     event_broker:
     {{- range $key, $value := .Values.applicationSettings.endpoints.eventBroker }}
       {{- if not (eq $key "enabled") }}
@@ -57,7 +57,7 @@ data:
       {{- end }}
     {{- end }}
 {{- end }}
-{{- if eq (include "rasa.endpoints.action" .) "true" }}
+{{- if eq (include "kauza.endpoints.action" .) "true" }}
     action_endpoint:
       url: ${ACTION_SERVER_URL}
 {{- end }}

@@ -1,4 +1,4 @@
-{{- if and .Values.networkPolicy.enabled (eq (include "rasa.endpoints.action" .) "true") }}
+{{- if and .Values.networkPolicy.enabled (eq (include "kauza.endpoints.action" .) "true") }}
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -10,7 +10,7 @@ spec:
   policyTypes:
   - Egress
   egress:
-{{- if and (not (index .Values "rasa-action-server").external.enabled) (eq (include "rasa.endpoints.action" .) "true") }}
+{{- if and (not (index .Values "rasa-action-server").external.enabled) (eq (include "kauza.endpoints.action" .) "true") }}
   - to:
     - podSelector:
         matchLabels:
@@ -26,7 +26,7 @@ metadata:
   name: {{ include "rasa-common.names.fullname" . }}-allow-rasa-action-server-rasa-ingress
 spec:
   podSelector:
-{{- if and ((index .Values "rasa-action-server").external.enabled) (eq (include "rasa.endpoints.action" .) "true") }}
+{{- if and ((index .Values "rasa-action-server").external.enabled) (eq (include "kauza.endpoints.action" .) "true") }}
     matchLabels:
       app.kubernetes.io/name: rasa-action-server
 {{- else }}
