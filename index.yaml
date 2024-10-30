@@ -50,6 +50,6 @@ entries:
     - https://github.com/Wingrammer/helm-charts/tree/main/charts/kauza
     type: application
     urls:
-    - https://github.com/Wingrammer/helm-charts.git/charts/kauza-1.17.7.tgz
+    - https://github.com/Wingrammer/helm-charts/tree/main/charts/kauza-1.17.7.tgz
     version: 1.17.7
 generated: "2024-10-30T13:10:34.5157792Z"
