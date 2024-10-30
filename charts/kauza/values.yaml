@@ -598,10 +598,10 @@ rabbitmq:
     username: "user"
 
     # -- RabbitMQ application password
-    password: "password"
+    # password: "password"
 
     # -- Existing secret with RabbitMQ credentials (must contain a value for `rabbitmq-password` key)
-    existingPasswordSecret: ""
+    existingPasswordSecret: "rabbitmq-secret"
 
     # -- Erlang cookie
     erlangCookie: "erlangCookie"
