@@ -284,9 +284,9 @@ command: []
 extraEnv:
   # - name: SOME_CUSTOM_ENV_VAR
   #   value: "custom value"
-  - name: RABBITMQ-PASSWORD
+  - name: RABBITMQ_PASSWORD
     value: password
-  - name: RABBITMQ-USERNAME
+  - name: RABBITMQ_USERNAME
     value: user
   - name: RABBITMQ_HOST
     value: localhost
@@ -305,7 +305,7 @@ extraEnv:
   - name: REDIS_PORT
     value: "6379"
   - name: REDIS_PASSWORD
-    value: password
+    value: redis-password
   - name: REDIS_DB
     value: "1"
   
@@ -588,7 +588,7 @@ postgresql:
 ## Redis(TM) specific settings (https://artifacthub.io/packages/helm/bitnami/redis/14.1.0)
 redis:
   # -- Install Redis(TM)
-  install: false
+  install: true
 
   ## Redis(TM) replicas configuration parameters
   ## See: https://artifacthub.io/packages/helm/bitnami/redis/14.1.0#redis-tm-replicas-configuration-parameters
@@ -606,7 +606,7 @@ redis:
   ## This section is not a part of the Redis subchart
   external:
     # -- Determine if use an external Redis host
-    enabled: false
+    enabled: true
 
     # -- External Redis hostname
     ## The host value is accessible via the `${REDIS_HOST}` environment variable
@@ -616,7 +616,7 @@ redis:
 # RabbitMQ specific settings (https://artifacthub.io/packages/helm/bitnami/rabbitmq/8.12.1)
 rabbitmq:
   # -- Install RabbitMQ
-  install: false
+  install: true
 
   ## See: https://artifacthub.io/packages/helm/bitnami/rabbitmq/8.12.0#rabbitmq-parameters
   auth:
@@ -636,7 +636,7 @@ rabbitmq:
   ## This section is not a part of the RabbitMQ subchart
   external:
     # -- Determine if use an external RabbitMQ host
-    enabled: false
+    enabled: true
 
     # -- External RabbitMQ hostname
     ## The host value is accessible via the `${RABBITMQ_HOST}` environment variable
@@ -732,11 +732,11 @@ nginx:
 ## See: https://github.com/RasaHQ/helm-charts/tree/main/charts/rasa-action-server
 rasa-action-server:
   # -- Install Rasa Action Server
-  install: false
+  install: true
 
   external:
     # -- Determine if external URL is used
-    enabled: false
+    enabled: true
     # -- External URL to Rasa Action Server
     url: ""
 
@@ -744,10 +744,10 @@ rasa-action-server:
 ## See: https://github.com/RasaHQ/helm-charts/tree/main/charts/duckling
 duckling:
   # -- Install Duckling
-  install: false
+  install: true
 
   external:
     # -- Determine if external URL is used
-    enabled: false
+    enabled: true
     # -- External URL to Duckling
     url: ""
