@@ -47,7 +47,7 @@ entries:
       name: Rasa
     name: kauza
     sources:
-    - https://github.com/RasaHQ/helm-charts/tree/main/charts/rasa
+    - https://github.com/Wingrammer/helm-charts/tree/main/charts/kauza
     type: application
     urls:
     - https://github.com/Wingrammer/helm-charts.git/charts/kauza-1.17.7.tgz
