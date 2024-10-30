@@ -291,7 +291,7 @@ extraEnv:
   - name: RABBITMQ_HOST
     value: localhost
   - name: RABBITMQ_PORT
-    value: 5672
+    value: "5672"
   - name: DB_HOST
     value: mongodb+srv://winnerkonou:yyunudGbqqGvAGqp@cluster0.tx3sau5.mongodb.net/?retryWrites=true&w=majority
   - name: DB_USER
@@ -303,11 +303,11 @@ extraEnv:
   - name: REDIS_HOST
     value: localhost
   - name: REDIS_PORT
-    value: 6379
+    value: "6379"
   - name: REDIS_PASSWORD
     value: password
   - name: REDIS_DB
-    value: 1
+    value: "1"
   
   
 
