@@ -189,7 +189,7 @@ applicationSettings:
     ## All environment variables used as values are added to the rasa-oss container automatically if `redis.install=true`.
     lockStore:
       # -- Enable endpoint for Lock Store
-      enabled: false
+      enabled: true
 
       # -- Lock Store type
       type: "redis"
