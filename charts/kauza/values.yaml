@@ -239,7 +239,9 @@ applicationSettings:
       endpointURL: /webhook
 
     # -- Additional endpoints
-    additionalEndpoints: {}
+    additionalEndpoints:
+      botEditApi:
+        channel: https://kauza-fastapi-853408068762.us-central1.run.app/channel_by_name
 
   # Rasa X / Enterprise settings
   rasaX:
@@ -281,33 +283,33 @@ extraArgs: []
 command: []
 
 # -- Add extra environment variables
-extraEnv:
+extraEnv: {}
   # - name: SOME_CUSTOM_ENV_VAR
   #   value: "custom value"
-  - name: RABBITMQ_PASSWORD
-    value: password
-  - name: RABBITMQ_USERNAME
-    value: user
+  # - name: RABBITMQ_PASSWORD
+    # value: password
+  # - name: RABBITMQ_USERNAME
+    # value: user
   # - name: RABBITMQ_HOST
   #   value: localhost
   # - name: RABBITMQ_PORT
   #   value: "5672"
-  - name: DB_HOST
-    value: mongodb+srv://winnerkonou:yyunudGbqqGvAGqp@cluster0.tx3sau5.mongodb.net/?retryWrites=true&w=majority
-  - name: DB_USER
-    value: winnerkonou
-  - name: DB_PASSWORD
-    value: yyunudGbqqGvAGqp
-  - name: DB_DATABASE
-    value: kauza
+  # - name: DB_HOST
+    # value: mongodb+srv://winnerkonou:yyunudGbqqGvAGqp@cluster0.tx3sau5.mongodb.net/?retryWrites=true&w=majority
+  # - name: DB_USER
+    # value: winnerkonou
+  # - name: DB_PASSWORD
+    # value: yyunudGbqqGvAGqp
+  # - name: DB_DATABASE
+    # value: kauza
   # - name: REDIS_HOST
   #   value: localhost
   # - name: REDIS_PORT
   #   value: "6379"
-  - name: REDIS_PASSWORD
-    value: redis-password
-  - name: REDIS_DB
-    value: "1"
+  # - name: REDIS_PASSWORD
+    # value: redis-password
+  # - name: REDIS_DB
+    # value: "1"
   
   
 
