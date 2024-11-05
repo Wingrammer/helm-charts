@@ -189,7 +189,7 @@ applicationSettings:
     ## All environment variables used as values are added to the rasa-oss container automatically if `redis.install=true`.
     lockStore:
       # -- Enable endpoint for Lock Store
-      enabled: false
+      enabled: true
 
       # -- Lock Store type
       type: "redis"
@@ -239,7 +239,9 @@ applicationSettings:
       endpointURL: /webhook
 
     # -- Additional endpoints
-    additionalEndpoints: {}
+    additionalEndpoints:
+      botEditApi:
+        channel: https://kauza-fastapi-853408068762.us-central1.run.app/channel_by_name
 
   # Rasa X / Enterprise settings
   rasaX:
@@ -281,9 +283,35 @@ extraArgs: []
 command: []
 
 # -- Add extra environment variables
-extraEnv: []
+extraEnv: {}
   # - name: SOME_CUSTOM_ENV_VAR
   #   value: "custom value"
+  # - name: RABBITMQ_PASSWORD
+    # value: password
+  # - name: RABBITMQ_USERNAME
+    # value: user
+  # - name: RABBITMQ_HOST
+  #   value: localhost
+  # - name: RABBITMQ_PORT
+  #   value: "5672"
+  # - name: DB_HOST
+    # value: mongodb+srv://winnerkonou:yyunudGbqqGvAGqp@cluster0.tx3sau5.mongodb.net/?retryWrites=true&w=majority
+  # - name: DB_USER
+    # value: winnerkonou
+  # - name: DB_PASSWORD
+    # value: yyunudGbqqGvAGqp
+  # - name: DB_DATABASE
+    # value: kauza
+  # - name: REDIS_HOST
+  #   value: localhost
+  # - name: REDIS_PORT
+  #   value: "6379"
+  # - name: REDIS_PASSWORD
+    # value: redis-password
+  # - name: REDIS_DB
+    # value: "1"
+  
+  
 
 ## Define the rasa image to work with
 image:
@@ -562,7 +590,7 @@ postgresql:
 ## Redis(TM) specific settings (https://artifacthub.io/packages/helm/bitnami/redis/14.1.0)
 redis:
   # -- Install Redis(TM)
-  install: false
+  install: true
 
   ## Redis(TM) replicas configuration parameters
   ## See: https://artifacthub.io/packages/helm/bitnami/redis/14.1.0#redis-tm-replicas-configuration-parameters
@@ -590,7 +618,7 @@ redis:
 # RabbitMQ specific settings (https://artifacthub.io/packages/helm/bitnami/rabbitmq/8.12.1)
 rabbitmq:
   # -- Install RabbitMQ
-  install: false
+  install: true
 
   ## See: https://artifacthub.io/packages/helm/bitnami/rabbitmq/8.12.0#rabbitmq-parameters
   auth:
@@ -706,7 +734,7 @@ nginx:
 ## See: https://github.com/RasaHQ/helm-charts/tree/main/charts/rasa-action-server
 rasa-action-server:
   # -- Install Rasa Action Server
-  install: false
+  install: true
 
   external:
     # -- Determine if external URL is used
@@ -718,7 +746,7 @@ rasa-action-server:
 ## See: https://github.com/RasaHQ/helm-charts/tree/main/charts/duckling
 duckling:
   # -- Install Duckling
-  install: false
+  install: true
 
   external:
     # -- Determine if external URL is used
