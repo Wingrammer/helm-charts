@@ -4,3 +4,8 @@ charts/*/index.yaml
 # vscode local history extension
 .history
 kauza-values.yml
+kubeconfig.yml
+dashboard-service-account.yml
+dashboard-cluster-role-binding.yml
+service-account-token.yml
+commands

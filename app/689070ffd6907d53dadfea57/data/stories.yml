@@ -1,0 +1,66 @@
+stories:
+- story: the beginning of flow - greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_missing_data
+- story: Get Create Invoice Form
+  steps:
+  - intent: create_invoice
+  - action: invoice_form
+  - active_loop: invoice_form
+- story: Get Login Form
+  steps:
+  - intent: login
+  - action: login_form
+  - active_loop: login_form
+- story: the beginning of flow - sign_up
+  steps:
+  - intent: sign_up
+  - action: utter_sign_up
+- story: the beginning of flow - invoices_list
+  steps:
+  - intent: invoices_list
+  - action: invoices_list_action
+- story: the beginning of flow - invoice_detail
+  steps:
+  - intent: invoice_detail
+  - action: invoice_detail_action
+- story: the beginning of flow - balance
+  steps:
+  - intent: balance
+  - action: balance_action
+- story: Get Top Up Account Form
+  steps:
+  - intent: top_up_account
+  - action: top_up_account_form
+  - active_loop: top_up_account_form
+- story: Get Cash Withdrawal Form
+  steps:
+  - intent: cash_withdrawal
+  - action: cash_withdrawal_form
+  - active_loop: cash_withdrawal_form
+- story: Connect after get login information
+  steps:
+  - active_loop: login_form
+  - action: login_form
+  - active_loop:
+  - action: authentification_action
+- story: Create invoice Story
+  steps:
+  - active_loop: invoice_form
+  - action: invoice_form
+  - active_loop:
+  - action: invoice_action
+- story: Make The Top Up Account
+  steps:
+  - active_loop: top_up_account_form
+  - action: top_up_account_form
+  - active_loop:
+  - action: top_up_account_action
+- story: Make The Cash Withdrawal
+  steps:
+  - active_loop: cash_withdrawal_form
+  - action: cash_withdrawal_form
+  - active_loop:
+  - action: cash_withdrawal_action

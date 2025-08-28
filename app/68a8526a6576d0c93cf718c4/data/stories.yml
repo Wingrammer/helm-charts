@@ -1,0 +1,49 @@
+stories:
+- story: the beginning of flow - greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: the beginning of flow - kauza_overview
+  steps:
+  - intent: kauza_overview
+  - action: utter_kauza_overview
+- story: the beginning of flow - kauza_services
+  steps:
+  - intent: kauza_services
+  - action: utter_kauza_services
+- story: the beginning of flow - kauza_location
+  steps:
+  - intent: kauza_location
+  - action: utter_kauza_location
+- story: the beginning of flow - kauza_contacts
+  steps:
+  - intent: kauza_contacts
+  - action: utter_kauza_contacts
+- story: the beginning of flow - foire_adjafi
+  steps:
+  - intent: foire_adjafi
+  - action: utter_foire_adjafi
+- story: the beginning of flow - foire_location
+  steps:
+  - intent: foire_location
+  - action: utter_foire_location
+- story: the beginning of flow - foire_program
+  steps:
+  - intent: foire_program
+  - action: utter_foire_program
+- story: the beginning of flow - frequent_questions
+  steps:
+  - intent: frequent_questions
+  - action: utter_frequent_questions
+- story: the beginning of flow - question1
+  steps:
+  - intent: question1
+  - action: utter_question1
+- story: the beginning of flow - question2
+  steps:
+  - intent: question2
+  - action: utter_question2
+- story: the beginning of flow - question3
+  steps:
+  - intent: question3
+  - action: utter_question3

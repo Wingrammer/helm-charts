@@ -1,0 +1,33 @@
+profile: auth0|67e4a833d6518eacc30c9a321744737774968
+recipe: default.v1
+language: en
+assistant_id: 20240219-025211-concave-skunk
+model: 20250723-135755-[train_test_2]
+models:
+- 20250424-080628-['Hellows']
+- 2025-05-23_11-10-12_model
+- 2025-05-23_13-09-08_model
+- 2025-05-23_14-42-06_model
+- 2025-05-23_14-45-13_model
+- 2025-05-23_14-45-18_model
+- default_filename
+- default_filename
+- 20250613-155230-['train_test']
+- 20250723-135755-['train_test_2']
+pipeline:
+- name: WhitespaceTokenizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+  token_pattern: (?u)\b\w+\b
+- name: DucklingEntityExtractor
+  url: http://localhost:8000
+  dimensions:
+  - number
+- name: DIETClassifier
+  epochs: 100
+- name: EntitySynonymMapper
+policies:
+- name: TEDPolicy
+  epochs: 100
+- name: AugmentedMemoizationPolicy
+- name: RulePolicy

@@ -1,0 +1,94 @@
+intents:
+- greet
+- contact_details
+- location
+- schedules
+- services
+- services_images
+- delete_now
+- delete_now2
+- delete_now3
+- utter_test
+- utter_test2
+- delete_now8
+- utter_test3
+- resilver_test
+entities:
+- name2
+- Entreprise
+- coco
+- zone
+- rast
+- oth
+- squiz
+- sasa
+- drich
+- rick
+slots: {}
+actions: []
+forms: {}
+responses:
+  utter_services_images:
+  - text: Les images de nos services ne sont pas disponibles pour le moment. Veuillez
+      nous contacter pour plus d'informations.
+    channel: whatsapp
+    buttons:
+    - title: Informations
+      payload: /informations_isdi
+    custom: {}
+  utter_contact_details:
+  - text: |-
+      Numéro : 93588140
+      Site web : test@gmail.com
+      Site web : http://95.111.230.249:9009/ui/
+      LinkedIn : https://www.linkedin.com/in/hishaam-tchirou/
+      Facebook : https://www.facebook.com/hishaam.tchirou
+  utter_schedules:
+  - text: Nous sommes ouverts du Lundi - Mercredi - Vendredi de 08 - 17h.
+  utter_services:
+  - text: |-
+      Voici nos services et produits chez Visorcorp :
+      1. Support PC
+  utter_greet:
+  - text: |-
+      Bonjour ! Bienvenue chez Visorcorp. Que souhaitez-vous savoir à propos de nous ? Voici les informations disponibles :
+      1. Les services proposés
+      2. Notre adresse et localisation
+      3. Nos horaires d'ouverture
+      4. Nos coordonnées
+      5. Voir des images de nos services
+
+      Veuillez taper le numéro correspondant à votre demande.
+  utter_location:
+  - text: Nous sommes localiser à Lomé - Togo.
+  utter_delete_now:
+  - text: Test
+    channel: string
+    image: string
+    custom: {}
+  utter_utter_test3:
+  - text: Lol
+    channel: string
+    image: string
+    custom: {}
+  utter_test_submit:
+  - text: Koko
+    buttons: []
+    custom: {}
+  utter_reconnected_edge:
+  - text: Test
+    buttons: []
+    custom: {}
+  utter_reconnected_edge_2:
+  - text: Test
+    buttons: []
+    custom: {}
+  utter_reconnected_edge_3:
+  - text: Test
+    buttons: []
+    custom: {}
+  utter_reconnected_edge_4:
+  - text: Test 4
+    buttons: []
+    custom: {}
+session_configs: {}

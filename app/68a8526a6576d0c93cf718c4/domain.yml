@@ -1,0 +1,168 @@
+intents:
+- greet
+- kauza_overview
+- kauza_services
+- kauza_location
+- kauza_contacts
+- foire_adjafi
+- foire_location
+- foire_program
+- frequent_questions
+- question1
+- question2
+- question3
+entities: []
+slots: {}
+actions: []
+forms: {}
+responses:
+  utter_greet:
+  - text: Bienvenue sur Kaara. Que souhaitez-vous faire aujourd’hui ?
+    buttons:
+    - title: Kauza
+      payload: /kauza_overview
+    - title: Foire Adjafi
+      payload: /foire_adjafi
+    custom: {}
+  utter_kauza_overview:
+  - text: |-
+      KAUZA est un outil de création d'Assistants Virtuels Intelligents, chatbots, voicebots et call bots. 
+      👉Voulez-vous voir :
+      - Les services de Kauza
+      - La localisation de l'entreprise
+      - Les contacts et réseaux de Kauza
+    buttons:
+    - title: Services
+      payload: /kauza_services
+    - title: Localisation
+      payload: /kauza_location
+    - title: Contacts
+      payload: /kauza_contacts
+    custom: {}
+  utter_kauza_services:
+  - text: |-
+      À détailler après
+      Services de Kauza : 
+      - Chatbots 
+      - Botcards
+    buttons:
+    - title: Retour
+      payload: /kauza_overview
+    custom: {}
+  utter_kauza_location:
+  - text: |-
+      Adresse Ghana : Kauza Head Office : GA- 075-2892 NII TETTEH WULUKU RD. P.O.BOX GP 3997 ACCRA 
+
+      Adresse Côte d'ivoire : Urielle Group, Abidjan, Cocody Angré, Djibi en haut de Coris Bank 
+
+      Adresse Togo : Kauza R&D and Marketing : Immeuble Hognekaba, Boulevard d'Adidoadin, Carréfour Bodjona, Lomé, 04BP789
+    channel: ''
+    buttons:
+    - title: Retour
+      payload: /kauza_overview
+    custom:
+      location:
+        name: Kauza TOGO
+        longitude: 1.190628
+        latitude: 6.204867
+        address: Kauza, Lomé - TOGO
+  utter_kauza_contacts:
+  - text: |-
+      Facebook : Kauza AFRICA
+      Linkedin : https://www.linkedin.com/company/kauza-africa/ 
+      Tel : +228 97 26 20 82
+      Email : management@kauzaafrica.com
+    buttons:
+    - title: Retour
+      payload: /kauza_overview
+    custom: {}
+  utter_foire_adjafi:
+  - text: La foire Adjafi est un grand rendez-vous commercial et culturel au Togo,
+      dédié à la promotion des jeunes entrepreneurs et des produits Made in Togo.
+    buttons:
+    - title: Programme
+      payload: /foire_program
+    - title: Localisation
+      payload: /foire_location
+    - title: FAQ
+      payload: /frequent_questions
+    custom: {}
+  utter_foire_location:
+  - text: |-
+      La foire Adjafi se déroule à Agoè-Nyivé sur le terrain du Lycée d'Agoè à Lomé aménagé pour accueillir les exposants et les visiteurs.
+      Voici la localisation de la Foire Adjafi
+    buttons:
+    - title: Retour
+      payload: /foire_adjafi
+    custom:
+      location:
+        name: Foire Adjafi
+        longitude: 1.191745
+        latitude: 6.22072
+        address: Agoè Cacavéli, Lomé - TOGO
+  utter_foire_program:
+  - text: |-
+      Cette édition va se tenir du 21 Août au 04 Septembre. 
+      Le programme complet de la foire Adjafi Edition 2025 se trouve dans le PDF suivant.
+    buttons:
+    - title: Retour
+      payload: /foire_adjafi
+    custom:
+      document: https://gbgzlmmdiifrjmwkteno.supabase.co/storage/v1/object/sign/userimage/pdf24_converted.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV84NTNlNDQxNS03NjVlLTQwMjQtOTIxZS0wNGQ0NTBlYjFmYzUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJ1c2VyaW1hZ2UvcGRmMjRfY29udmVydGVkLnBkZiIsImlhdCI6MTc1NTg2NjMxNCwiZXhwIjoxOTEzNTQ2MzE0fQ.KWpe5iGn3BEihl9fRBe8Z3E9Ux3S78SzDQnfE5fUKvo
+  utter_frequent_questions:
+  - text: ''
+    channel: ''
+    buttons:
+    - title: Retour
+      payload: /foire_adjafi
+    custom:
+      interactive:
+        type: list
+        body:
+          text: Cliquez sur ce bouton pour voir une liste des questions fréquemment
+            posées à propos de la foire Adjafi et choisissez une d'entre elles pour
+            avoir la réponse.
+        action:
+          button: Questions
+          sections:
+          - title: Questions
+            rows:
+            - id: /question1
+              title: Question 1
+              description: C'est quoi la foire Adjafi ?
+            - id: /question2
+              title: Question 2
+              description: Quels exposants à la foire Adjafi ?
+            - id: /question3
+              title: Question 3
+              description: Pourquoi participer à la foire Adjafi ?
+  utter_question1:
+  - text: La foire Adjafi est un grand rendez-vous commercial et culturel au Togo,
+      dédié à la promotion des jeunes entrepreneurs et des produits Made in Togo.
+      Elle réunit chaque année des centaines d’exposants et attire des milliers de
+      visiteurs.
+    buttons:
+    - title: Retour FAQ
+      payload: /frequent_questions
+    - title: Retour Foire
+      payload: /foire_adjafi
+    custom: {}
+  utter_question2:
+  - text: La foire Adjafi accueille des entreprises togolaises, startups, associations,
+      artisans et commerçants.
+    buttons:
+    - title: Retour FAQ
+      payload: /frequent_questions
+    - title: Retour Foire
+      payload: /foire_adjafi
+    custom: {}
+  utter_question3:
+  - text: La foire Adjafi constitue une vitrine pour les jeunes entrepreneurs et favorise
+      le réseautage avec des acteurs internationaux.
+    buttons:
+    - title: Retour FAQ
+      payload: /frequent_questions
+    - title: Retour Foire
+      payload: /foire_adjafi
+    custom: {}
+session_configs: {}

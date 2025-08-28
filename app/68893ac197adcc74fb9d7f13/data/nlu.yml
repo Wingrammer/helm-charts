@@ -1,0 +1,30 @@
+nlu:
+- intent: salutation
+  examples: |-
+    - Bonjour
+    - Salut
+    - Hello
+    - Hi
+    - Coucou
+    - Comment tu vas ?
+    - Cc
+    - Slt
+- intent: demander_articles
+  examples: |-
+    - Demander un article
+    - Je cherche un article
+- intent: ajouter_au_panier
+  examples: |-
+    - Ajouter au panier
+    - Je prends celle-ci
+    - Mets-la dans mon panier
+    - Commande celle-là
+    - Ajouter et commander
+- intent: confirmer_paiement
+  examples: ''
+- intent: panier_rempli
+  examples: "- J'ai fini"
+- intent: paiement_effectué
+  examples: |-
+    - Paiement effectué
+    - J'ai fini de payer

@@ -1,0 +1,26 @@
+
+image:
+  repository: ""      # your image repo or rasa-sdk
+  tag: "22-08-2025-01"
+  pullPolicy: Always
+persistence:
+  enabled: true
+  existingClaim: rasa-pvc   # 👈 use the same claim as rasa-oss
+volumes:
+  - name: rasa-data
+    persistentVolumeClaim:
+      claimName: rasa-pvc
+volumeMounts:
+  - name: rasa-data
+    mountPath: /app/actions   # 👈 mount only the actions folder
+    subPath: actions          # maps to /app/actions inside PVC
+securityContext:
+  fsGroup: 1000
+initContainers:
+  - name: volume-permission-fix
+    image: busybox
+    command: ['sh', '-c', 'chmod -R 777 /app/actions']
+    volumeMounts:
+      - name: rasa-data
+        mountPath: /app/actions
+        subPath: actions

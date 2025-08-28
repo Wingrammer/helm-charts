@@ -1,0 +1,113 @@
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: services
+  steps:
+  - intent: services
+  - action: utter_services
+- story: location
+  steps:
+  - intent: location
+  - action: utter_location
+- story: schedules
+  steps:
+  - intent: schedules
+  - action: utter_schedules
+- story: services_images
+  steps:
+  - intent: services_images
+  - action: utter_services_images
+- story: contact_details
+  steps:
+  - intent: contact_details
+  - action: utter_contact_details
+- story: informations_generales
+  steps:
+  - intent: informations_generales
+  - action: utter_informations_isdi
+- story: formations_offertes
+  steps:
+  - intent: formations_offertes
+  - action: utter_formations_isdi
+- story: localisation_etablissement
+  steps:
+  - intent: localisation_etablissement
+  - action: utter_location
+- story: conditions_admission
+  steps:
+  - intent: conditions_admission
+  - action: utter_conditions_admission
+- story: frais_scolarite
+  steps:
+  - intent: frais_scolarite
+  - action: utter_frais_scolarite
+- story: insertion_professionnelle
+  steps:
+  - intent: insertion_professionnelle
+  - action: utter_insertion_professionnelle
+- story: concours_entree
+  steps:
+  - intent: concours_entree
+  - action: utter_concours_entree
+- story: valeurs_vision
+  steps:
+  - intent: valeurs_vision
+  - action: utter_valeurs_vision
+- story: actualites
+  steps:
+  - intent: actualites
+  - action: utter_actualites
+- story: mission_isdi
+  steps:
+  - intent: mission_isdi
+  - action: utter_mission_isdi
+- story: langues_enseignement
+  steps:
+  - intent: langues_enseignement
+  - action: utter_langues_enseignement
+- story: contact_reseaux
+  steps:
+  - intent: contact_reseaux
+  - action: utter_contact_reseaux
+- story: reconnaissance_officielle
+  steps:
+  - intent: reconnaissance_officielle
+  - action: utter_reconnaissance_officielle
+- story: partenariats_academiques
+  steps:
+  - intent: partenariats_academiques
+  - action: utter_partenariats_academiques
+- story: debouches_professionnels
+  steps:
+  - intent: debouches_professionnels
+  - action: utter_debouches_professionnels
+- story: bourses_disponibles
+  steps:
+  - intent: bourses_disponibles
+  - action: utter_bourses_disponibles
+- story: programmes_master
+  steps:
+  - intent: programmes_master
+  - action: utter_programmes_master
+- story: cours_distance
+  steps:
+  - intent: cours_distance
+  - action: utter_cours_distance
+- story: duree_etudes
+  steps:
+  - intent: duree_etudes
+  - action: utter_duree_etudes
+- story: stages_partenariats
+  steps:
+  - intent: stages_partenariats
+  - action: utter_stages_partenariats
+- story: taux_insertion_professionnelle
+  steps:
+  - intent: taux_insertion_professionnelle
+  - action: utter_insertion_professionnelle
+- story: evenements_isdi
+  steps:
+  - intent: evenements_isdi
+  - action: utter_evenements_isdi

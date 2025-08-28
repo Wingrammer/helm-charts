@@ -1,0 +1,280 @@
+intents:
+- greet
+- send_client_name
+- send_client_email
+- send_client_phone_number
+- send_invoice_amount
+- send_invoice_description
+- send_debtor_phone_number
+- send_debtor_email
+- create_invoice
+- login
+- sign_up
+- invoices_list
+- invoice_detail
+- balance
+- top_up_account
+- cash_withdrawal
+entities:
+- client_name
+- client_email
+- client_phone_number
+- invoice_amount
+- invoice_description
+- debtor_phone_number
+- debtor_email
+- invoice_id
+slots:
+  client_name_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: client_name
+      value: ''
+      action: ''
+    influence_conversation: false
+  client_email_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: client_email
+      value: ''
+      action: ''
+    influence_conversation: false
+  client_phone_number_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: client_phone_number
+      value: ''
+      action: ''
+    influence_conversation: false
+  invoice_amount_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: invoice_amount
+      value: ''
+      action: ''
+    influence_conversation: false
+  invoice_description_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: invoice_description
+      value: ''
+      action: ''
+    influence_conversation: false
+  debtor_phone_number_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: debtor_phone_number
+      value: ''
+      action: ''
+    influence_conversation: false
+  debtor_email_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: debtor_email
+      value: ''
+      action: ''
+    influence_conversation: false
+  access_token_slot:
+    type: text
+    mappings: []
+    influence_conversation: false
+  user_id_slot:
+    type: text
+    mappings: []
+    influence_conversation: false
+  invoice_id_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: invoice_id
+      value: ''
+      action: ''
+    influence_conversation: false
+actions:
+- authentification_action:
+    send_domain: true
+- invoice_action:
+    send_domain: true
+- invoices_list_action:
+    send_domain: true
+- invoice_detail_action:
+    send_domain: true
+- balance_action:
+    send_domain: true
+- top_up_account_action:
+    send_domain: true
+- cash_withdrawal_action:
+    send_domain: true
+forms:
+  login_form:
+    required_slots:
+    - client_name_slot
+    - client_email_slot
+    - client_phone_number_slot
+    ignored_intents: []
+  invoice_form:
+    required_slots:
+    - invoice_amount_slot
+    - invoice_description_slot
+    - debtor_phone_number_slot
+    - debtor_email_slot
+    ignored_intents: []
+  cash_withdrawal_form:
+    required_slots:
+    - invoice_amount_slot
+    ignored_intents: []
+  top_up_account_form:
+    required_slots:
+    - invoice_amount_slot
+    ignored_intents: []
+responses:
+  utter_greet:
+  - text: |-
+      Bienvenue sur KauzaPay. Que souhaitez-vous faire aujourd’hui ?
+
+      1️⃣ Créer une facture
+      2️⃣ Créer une tontine
+      3️⃣ Voir mes factures
+      4️⃣ Voir mes tontines
+      5️⃣ Voir mon solde
+      6️⃣ Recharger mon compte
+      7️⃣ Faire un retrait
+      8️⃣ Participer à une tontine
+      9️⃣ Payer pour une tontine
+    channel: whatsapp
+    buttons:
+    - title: Créer une facture
+      payload: /create_invoice
+    - title: Mon solde
+      payload: /balance
+    - title: Recharger
+      payload: /top_up_account
+    custom: {}
+  - text: |-
+      Bienvenue sur KauzaPay. Que souhaitez-vous faire aujourd’hui ?
+
+      1️⃣ Créer une facture
+      2️⃣ Créer une tontine
+      3️⃣ Voir mes factures
+      4️⃣ Voir mes tontines
+      5️⃣ Voir mon solde
+      6️⃣ Recharger mon compte
+      7️⃣ Faire un retrait
+      8️⃣ Participer à une tontine
+      9️⃣ Payer pour une tontine
+    custom: {}
+  utter_missing_data:
+  - text: Avez vous déjà un compte KauzaPay ?
+    buttons:
+    - title: Oui
+      payload: /login
+    - title: Non
+      payload: /sign_up
+    custom: {}
+  utter_sign_up:
+  - text: |-
+      Très bien, commençons par créer votre compte sur notre plateforme : https://kauzapay.com/signup.
+      Une fois votre compte créé, revenez me voir et cliquer sur le bouton en dessous pour continuer.
+    buttons:
+    - title: Compte créé
+      payload: /login
+    custom: {}
+  utter_ask_client_name_slot:
+  - text: |-
+      Très bien! J'aurai besoin de certaines informations pour retrouver votre compte. 
+      D'abord, quel est votre nom d'utilisateur sur KauzaPay ?
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_ask_client_email_slot:
+  - text: Et l'email que vous avez utilisé lors de la création du compte (+228********)
+      ?
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_ask_client_phone_number_slot:
+  - text: |-
+      Super. Dernière étape. Il me faut votre numéro de téléphone. 
+
+      Attention ce numéro sera celui sur lequel vous pourrez faire vos recharges et vos retraits. Vous pourrez le changer plus tard au besoin.
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_ask_invoice_amount_slot:
+  - text: Quel est le montant de cette facture ?
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_ask_invoice_description_slot:
+  - text: Donner une description à votre facture (De préférable court et concis)
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_ask_debtor_phone_number_slot:
+  - text: On y est presque. Quel est le numéro de téléphone de destinataire de cette
+      facture ?
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_ask_debtor_email_slot:
+  - text: Et pour finir, quel est l'email du destinataire de cette facture ? (Dans
+      le cas où on n'arrive pas à le joindre par message)
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_invoice_submit:
+  - text: '{text}'
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_invoices_list:
+  - text: ''
+    channel: string
+    image: string
+    buttons: []
+    custom:
+      interactive: '{interactive}'
+  utter_invoice_detail:
+  - text: '{text}'
+    channel: string
+    image: string
+    buttons:
+    - title: Retour
+      payload: /invoices_list
+    custom: {}
+  utter_balance:
+  - text: '{text}'
+    channel: string
+    image: string
+    buttons:
+    - title: Retour
+      payload: /greet
+    custom: {}
+  utter_top_up_account:
+  - text: '{text}'
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+  utter_cash_withdrawal:
+  - text: '{text}'
+    channel: string
+    image: string
+    buttons: []
+    custom: {}
+session_configs: {}

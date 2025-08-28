@@ -1,0 +1,120 @@
+intents:
+- salutation
+- demander_articles
+- ajouter_au_panier
+- confirmer_paiement
+- panier_rempli
+- paiement_effectué
+entities:
+- nom_utilisateur
+- numero_phone_utilisateur
+- article
+- variants_article
+- article_id
+slots:
+  article_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: article
+      value: ''
+      action: ''
+  variants_article_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: variants_article
+      value: ''
+      action: ''
+  nom_utilisateur_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: nom_utilisateur
+      value: ''
+      action: ''
+  numero_phone_utilisateur_slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: numero_phone_utilisateur
+      value: ''
+      action: ''
+  article_id_slot:
+    type: string
+    mappings: []
+  reference_paiement_slot:
+    type: text
+    mappings: []
+actions:
+- ajouter_au_panier_action:
+    send_domain: true
+- demander_articles_action:
+    send_domain: true
+- panier_rempli_action:
+    send_domain: true
+- confirmer_paiement_action:
+    send_domain: true
+- paiement_effectué_action:
+    send_domain: true
+forms:
+  article_form:
+    required_slots:
+    - article_slot
+    - variants_article_slot
+    ignored_intents: []
+  utilisateur_form:
+    required_slots:
+    - nom_slot
+    - numero_phone_utilisateur_slot
+    ignored_intents: []
+responses:
+  utter_salutation:
+  - text: Bonjour boss
+    channel: ''
+    buttons:
+    - title: Commander un article
+      payload: /demander_articles
+    custom: {}
+  utter_ask_article_slot:
+  - text: Quel article voulez vous commander ?
+    buttons: []
+    custom: {}
+  utter_ask_variants_article_slot:
+  - text: Donner la couleur et la taille de l'article.
+    buttons: []
+    custom: {}
+  utter_ask_nom_slot:
+  - text: Quel est votre nom ?
+    buttons: []
+    custom: {}
+  utter_ask_numero_phone_utilisateur_slot:
+  - text: Donner moi votre numéro de téléphone (+2289*******).
+    buttons: []
+    custom: {}
+  utter_ajouter_au_panier:
+  - text: '{text}'
+    buttons:
+    - title: Panier rempli
+      payload: /panier_rempli
+    custom: {}
+  utter_demander_articles:
+  - text: '{text}'
+    image: '{image}'
+    buttons:
+    - title: Ajouter l'article au panier
+      payload: /ajouter_au_panier
+    custom: {}
+  utter_panier_rempli:
+  - text: '{text}'
+    buttons:
+    - title: Oui
+      payload: /confirmer_paiement
+    custom: {}
+  utter_confirmer_paiement:
+  - text: '{text}'
+    buttons:
+    - title: Paiement effectué
+      payload: paiement_effectué
+    custom: {}
+session_configs: {}

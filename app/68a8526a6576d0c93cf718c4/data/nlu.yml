@@ -1,0 +1,25 @@
+nlu:
+- intent: greet
+  examples: ''
+- intent: kauza_overview
+  examples: ''
+- intent: kauza_services
+  examples: ''
+- intent: kauza_location
+  examples: ''
+- intent: kauza_contacts
+  examples: ''
+- intent: foire_adjafi
+  examples: ''
+- intent: foire_location
+  examples: ''
+- intent: foire_program
+  examples: ''
+- intent: frequent_questions
+  examples: ''
+- intent: question1
+  examples: ''
+- intent: question2
+  examples: ''
+- intent: question3
+  examples: ''

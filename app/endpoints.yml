@@ -1,0 +1,30 @@
+tracker_store:
+  db: ${DB_DATABASE}
+  kms_provider_name: azure
+  password: ${DB_PASSWORD}
+  type: mongod
+  url: ${DB_HOST}
+  username: ${DB_USER}
+lock_store:
+  db: 1
+  password: ${REDIS_PASSWORD}
+  port: ${REDIS_PORT}
+  type: redis
+  url: ${REDIS_HOST}
+event_broker:
+  password: ${RABBITMQ_PASSWORD}
+  port: ${RABBITMQ_PORT}
+  queues: [rasa_production_events]
+  type: pika
+  url: ${RABBITMQ_HOST}
+  username: ${RABBITMQ_USERNAME}
+action_endpoint:
+  url: ${ACTION_SERVER_URL}
+bot_edit_api:
+  channel: https://kauza-cme6bcg9hqfwcngq.spaincentral-01.azurewebsites.net/channel_by_name
+botEditApi:
+  channel: https://kauza-fastapi-853408068762.us-central1.run.app/channel_by_name
+cache_store:
+  host: kauza-redis-master
+  password: redis-password
+  type: redis

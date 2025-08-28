@@ -1,0 +1,39 @@
+stories:
+- story: the beginning of flow - salutation
+  steps:
+  - intent: salutation
+  - action: utter_salutation
+- story: Lancer le form article_form
+  steps:
+  - intent: demander_articles
+  - action: article_form
+  - active_loop: article_form
+- story: the beginning of flow - ajouter_au_panier
+  steps:
+  - intent: ajouter_au_panier
+  - action: ajouter_au_panier_action
+- story: Lancer le form utilisateur_form
+  steps:
+  - intent: confirmer_paiement
+  - action: utilisateur_form
+  - active_loop: utilisateur_form
+- story: the beginning of flow - panier_rempli
+  steps:
+  - intent: panier_rempli
+  - action: panier_rempli_action
+- story: the beginning of flow - paiement_effectué
+  steps:
+  - intent: paiement_effectué
+  - action: paiement_effectué_action
+- story: Lancer l'action après le form
+  steps:
+  - active_loop: article_form
+  - action: article_form
+  - active_loop:
+  - action: demander_articles_action
+- story: Lancer l'action après le form utilisateur form
+  steps:
+  - active_loop: utilisateur_form
+  - action: utilisateur_form
+  - active_loop:
+  - action: confirmer_paiement_action

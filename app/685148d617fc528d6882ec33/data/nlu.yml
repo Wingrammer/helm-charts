@@ -1,0 +1,197 @@
+nlu:
+- intent: contact_details
+  examples: |-
+    - 4
+    - Quatre
+    - Coordonnées
+    - Comment vous contacter ?
+    - Contact
+- intent: schedules
+  examples: |-
+    - 3
+    - Trois
+    - Horaires
+    - Quels sont vos horaires ?
+    - Horaires d'ouverture
+- intent: services
+  examples: |-
+    - 1
+    - Un
+    - Les services proposés
+    - Quels services proposez-vous ?
+    - Services
+- intent: greet
+  examples: |-
+    - Bonjour
+    - Salut
+    - Hello
+    - Hey
+    - Coucou
+- intent: services_images
+  examples: |-
+    - 5
+    - Cinq
+    - Images des services
+    - Photos des services
+    - Voir les services
+- intent: location
+  examples: |-
+    - 2
+    - Deux
+    - Adresse
+    - Localisation
+    - Où êtes-vous situés ?
+- intent: informations_generales
+  examples: |-
+    - Clique sur Informations
+    - Donne-moi des informations
+    - Je veux en savoir plus sur l’ISDI
+    - Des infos sur l'ISDI
+    - Dis-moi ce qu'est l'ISDI
+- intent: formations_offertes
+  examples: |-
+    - Clique sur Formations
+    - Quelles formations proposez-vous ?
+    - Quels sont les cursus disponibles ?
+    - Montre-moi les formations de l’ISDI
+    - Liste des formations
+- intent: localisation_etablissement
+  examples: |-
+    - Clique sur Localisation
+    - Où se trouve l’ISDI ?
+    - Adresse de l’ISDI
+    - L'ISDI est situé où ?
+    - Donne-moi votre localisation
+- intent: conditions_admission
+  examples: |-
+    - Clique sur Conditions d'admission
+    - Quelles sont les conditions d'admission ?
+    - Comment postuler ?
+    - Quels documents pour l'admission ?
+    - Admission à l'ISDI
+- intent: frais_scolarite
+  examples: |-
+    - Clique sur Frais de scolarité
+    - Combien coûte la scolarité ?
+    - Quel est le prix des cours ?
+    - Frais pour étudier à l’ISDI
+    - Tarifs des formations
+- intent: insertion_professionnelle
+  examples: |-
+    - Clique sur Insertion professionnelle
+    - Quel est le taux d'insertion ?
+    - Insertion des diplômés
+    - Débouchés après l’ISDI
+    - Emploi après diplôme
+- intent: concours_entree
+  examples: |-
+    - Clique sur Concours d'entrée
+    - Y a-t-il un concours d'entrée ?
+    - Comment entrer à l’ISDI ?
+    - Faut-il passer un concours ?
+    - Admission par concours
+- intent: valeurs_vision
+  examples: |-
+    - Clique sur Valeurs et vision
+    - Quelles sont vos valeurs ?
+    - Quelle est la vision de l’ISDI ?
+    - Parlez-moi de vos valeurs
+    - Vision et mission de l’institut
+- intent: actualites
+  examples: |-
+    - Clique sur Actualités
+    - Quelles sont les dernières nouvelles ?
+    - Donne-moi les actualités de l’ISDI
+    - Nouvelles récentes
+    - Infos récentes
+- intent: mission_isdi
+  examples: |-
+    - Clique sur Mission de l’ISDI
+    - Quelle est la mission de l’ISDI ?
+    - Parle-moi de la mission de l’institut
+    - Que fait l’ISDI ?
+    - Mission de l’Institut
+- intent: langues_enseignement
+  examples: |-
+    - Clique sur Langues d’enseignement
+    - Quelles langues sont enseignées ?
+    - Langues utilisées dans les cours
+    - En quelles langues enseignez-vous ?
+    - Langues à l’ISDI
+- intent: contact_reseaux
+  examples: |-
+    - Clique sur Contact & Réseaux
+    - Comment vous contacter ?
+    - Coordonnées de l’ISDI
+    - Téléphone et email
+    - Réseaux sociaux de l’ISDI
+- intent: reconnaissance_officielle
+  examples: |-
+    - Clique sur Reconnaissance officielle
+    - L’ISDI est-elle reconnue ?
+    - Reconnaissance par l’État
+    - Certification de l’ISDI
+    - Est-ce que l’ISDI est accrédité ?
+- intent: partenariats_academiques
+  examples: |-
+    - Clique sur Partenariats académiques
+    - Quels sont vos partenariats académiques ?
+    - Avec quelles universités travaillez-vous ?
+    - Partenaires académiques de l’ISDI
+    - Collaborations universitaires
+- intent: debouches_professionnels
+  examples: |-
+    - Clique sur Débouchés professionnels
+    - Quels sont les débouchés après ISDI ?
+    - Où travaillent vos diplômés ?
+    - Carrières possibles après l’ISDI
+    - Insertion professionnelle
+- intent: bourses_disponibles
+  examples: |-
+    - Clique sur Bourses disponibles ?
+    - Y a-t-il des bourses ?
+    - Aide financière pour étudiants
+    - Bourses pour étudiants méritants
+    - Aides au financement
+- intent: programmes_master
+  examples: |-
+    - Clique sur Programmes de Master
+    - Quels masters proposez-vous ?
+    - Liste des masters disponibles
+    - Formations de master
+    - Masters à l’ISDI
+- intent: cours_distance
+  examples: |-
+    - Clique sur Cours à distance
+    - Proposez-vous des cours en ligne ?
+    - Formation à distance
+    - Modules en ligne
+    - Cours en présentiel ou à distance ?
+- intent: duree_etudes
+  examples: |-
+    - Clique sur Durée des études
+    - Combien de temps durent les études ?
+    - Durée de la licence
+    - Durée du master
+    - Combien d’années pour un diplôme ?
+- intent: stages_partenariats
+  examples: |-
+    - Clique sur Stages & Partenariats
+    - Y a-t-il des stages disponibles ?
+    - Partenariats avec des entreprises
+    - Opportunités de stage
+    - Collaborations professionnelles
+- intent: taux_insertion_professionnelle
+  examples: |-
+    - Clique sur Taux d’insertion professionnelle
+    - Quel est le taux d’insertion ?
+    - Insertion des diplômés
+    - Taux d’employabilité
+    - Chances de trouver un emploi après l’ISDI
+- intent: evenements_isdi
+  examples: |-
+    - Clique sur Événements de l’ISDI
+    - Quels événements organisez-vous ?
+    - Événements récents de l’ISDI
+    - Colloques, conférences, remises de diplôme
+    - Activités et manifestations

@@ -1,0 +1,22 @@
+profile: auth0|67e4a833d6518eacc30c9a321755861610197
+recipe: default.v1
+language: en
+assistant_id: 20240219-025211-concave-skunk
+models: []
+pipeline:
+- name: WhitespaceTokenizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+  token_pattern: (?u)\b\w+\b
+- name: DucklingEntityExtractor
+  url: http://localhost:8000
+  dimensions:
+  - number
+- name: DIETClassifier
+  epochs: 100
+- name: EntitySynonymMapper
+policies:
+- name: TEDPolicy
+  epochs: 100
+- name: AugmentedMemoizationPolicy
+- name: RulePolicy

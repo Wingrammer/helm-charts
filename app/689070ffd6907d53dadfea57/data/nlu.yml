@@ -1,0 +1,92 @@
+nlu:
+- intent: greet
+  examples: |-
+    - Bonjour
+    - Hello
+    - Coucou
+    - Cc
+    - Comment ça va ?
+    - Hi
+    - Bonsoir
+- intent: send_client_name
+  examples: |-
+    - [Jack Agbegbo](client_name)
+    - Le client s’appelle [Jack Agbegbo](client_name)
+    - Il se nomme [Jack Agbegbo](client_name)
+- intent: send_client_email
+  examples: |-
+    - [exemple@gmail.com](client_email)
+    - Voici mon email: [exemple@gmail.com](client_email)
+    - Mon email est: [exemple@gmail.com](client_email)
+- intent: send_client_phone_number
+  examples: |-
+    - [93588140](client_phone_number)
+    - Voici mon numéro: (client_phone_number)
+    - Mon numéro de téléphone est: (client_phone_number)
+- intent: send_invoice_amount
+  examples: |-
+    - [25000](invoice_amount)
+    - Le montant est de [30000](invoice_amount)
+    - [3000](invoice_amount)
+- intent: send_invoice_description
+  examples: |-
+    - [Facture du 19/06/2024](invoice_description)
+    - [Facture pour la prestation de service](invoice_description)
+- intent: send_debtor_phone_number
+  examples: |-
+    - [93588140](client_phone_number)
+    - Voici son numéro: (client_phone_number)
+    - Son numéro de téléphone est: (client_phone_number)
+- intent: send_debtor_email
+  examples: |-
+    - [exemple@gmail.com](client_email)
+    - Voici son email: [exemple@gmail.com](client_email)
+    - Son email est: [exemple@gmail.com](client_email)
+- intent: create_invoice
+  examples: |-
+    - 1
+    - Créer une facture
+    - Nouvelle facture
+    - Émettre une facture
+    - Je veux créer une facture
+    - Faire une facture
+- intent: login
+  examples: |-
+    - Oui
+    - oui j'ai un compte
+- intent: sign_up
+  examples: |-
+    - Non
+    - non je n'ai pas de compte
+- intent: invoices_list
+  examples: |-
+    - 3
+    - Voir mes factures
+    - Mes factures récentes
+    - Historique des factures
+    - Liste des factures
+- intent: invoice_detail
+  examples: |-
+    - Détails d’une facture
+    - Je veux les détails d'une facture
+- intent: balance
+  examples: |-
+    - 5
+    - Voir mon solde
+    - Combien j'ai sur mon compte
+    - Solde actuel
+    - Mon solde
+- intent: top_up_account
+  examples: |-
+    - 6
+    - Recharger mon compte
+    - Ajouter de l'argent
+    - Déposer de l'argent
+    - Créditer mon compte
+- intent: cash_withdrawal
+  examples: |-
+    - 7
+    - Faire un retrait
+    - Retirer de l'argent
+    - Retrait
+    - Je veux retirer

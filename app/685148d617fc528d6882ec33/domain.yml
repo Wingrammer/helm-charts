@@ -1,0 +1,194 @@
+intents:
+- contact_details
+- schedules
+- services
+- greet
+- services_images
+- location
+- informations_generales
+- formations_offertes
+- localisation_etablissement
+- conditions_admission
+- frais_scolarite
+- insertion_professionnelle
+- concours_entree
+- valeurs_vision
+- actualites
+- mission_isdi
+- langues_enseignement
+- contact_reseaux
+- reconnaissance_officielle
+- partenariats_academiques
+- debouches_professionnels
+- bourses_disponibles
+- programmes_master
+- cours_distance
+- duree_etudes
+- stages_partenariats
+- taux_insertion_professionnelle
+- evenements_isdi
+entities: []
+slots: {}
+actions: []
+forms: {}
+responses:
+  utter_greet:
+  - text: Bonjour et bienvenue à l'ISDI, l'Institut Supérieur de Droit et d’Interprétariat.
+      Comment puis-je vous aider aujourd'hui ?
+    buttons:
+    - title: Informations
+      payload: /informations_isdi
+    - title: Formations
+      payload: /Formations_isdi
+    - title: Localisation
+      payload: /localisation_isdi
+    custom: {}
+  utter_services:
+  - text: |-
+      Voici nos services et produits chez ISDI :
+      1. Formation
+  utter_contact_details:
+  - text: |-
+      Numéro : 22 19 53 01
+      Site web : isditogo@gmail.com
+      LinkedIn : https://tg.linkedin.com/company/isditogo
+      Facebook : https://www.facebook.com/ISDITogo/
+  utter_schedules:
+  - text: Nous sommes ouverts du Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de
+      06h- 18h.
+  utter_services_images:
+  - text: Les images de nos services ne sont pas disponibles pour le moment. Veuillez
+      nous contacter pour plus d'informations.
+  utter_location:
+  - text: Nous sommes localiser à 21 BKK, Rue Djavémé, derrière FUCEC Atikoumé, Lomé,
+      Togo, 22BP67LOMÉ, TG..
+  utter_informations_isdi:
+  - text: |-
+      **Date de création** : Août 2014
+      **Signification de ISDI** : Institut Supérieur de Droit et d’Interprétariat
+      **Mission** : Former des professionnels compétents en droit et interprétariat
+      **Langues d’enseignement** : Français, Anglais, Chinois
+      **Contact** : (+228) 22 50 94 14 / isditogo@gmail.com
+    custom: {}
+  utter_formations_isdi:
+  - text: |-
+      **Formations disponibles à l’ISDI** :
+
+      - **Licence en Droit** : Tronc commun, spécialisation en Droit Public ou Privé
+      - **Masters professionnels** :
+        - Droit des affaires et fiscalité
+        - Droit des marchés publics
+        - Droit de l’entreprise (partenariat avec l’Université de Douai, France)
+        - Droit des collectivités territoriales
+      - **Nouveaux Masters** : Sciences Politiques, Droit du Numérique & Protection des Données
+      - **Langues** : Anglais, Chinois, autres selon modules
+      - **Durée** : Licence (3 ans), Master (2 ans)
+    custom: {}
+  utter_conditions_admission:
+  - text: |-
+      **Conditions d’admission à l’ISDI** :
+
+      - Lettre de motivation manuscrite
+      - CV détaillé
+      - Copie d’une pièce d’identité
+      - Copie des relevés de notes et diplômes
+      - Frais de dossier : 25.000 FCFA (non remboursable, pour les Masters)
+      - **Sélection sur dossier** (pas de concours)
+    custom: {}
+  utter_frais_scolarite:
+  - text: |-
+      **Frais de scolarité estimés à l’ISDI** :
+
+      - **Licence** : entre 250.000 et 400.000 FCFA / an
+      - **Master** : entre 400.000 et 650.000 FCFA / an
+
+      Pour des informations précises, merci de contacter le secrétariat.
+    custom: {}
+  utter_insertion_professionnelle:
+  - text: |-
+      **Taux d’insertion professionnelle** :
+
+      L’ISDI affiche un taux de **65 à 68 %** grâce à :
+      - Des partenariats solides avec des entreprises
+      - Une formation pratique et professionnalisante
+      - Un accompagnement à l’insertion pour les diplômés
+    custom: {}
+  utter_concours_entree:
+  - text: Pour intégrer l'ISDI, il faut réussir le concours d'entrée qui évalue vos
+      compétences académiques et votre motivation.
+    custom: {}
+  utter_valeurs_vision:
+  - text: L’ISDI repose sur des valeurs fortes telles que l’innovation, l’excellence,
+      l’engagement social et la collaboration, avec une vision tournée vers un enseignement
+      inclusif et international.
+    custom: {}
+  utter_actualites:
+  - text: 'Découvrez les dernières actualités de l’ISDI : événements, conférences,
+      nouveaux programmes et collaborations internationales pour rester toujours à
+      la pointe.'
+    custom: {}
+  utter_mission_isdi:
+  - text: La mission de l’ISDI est de former des professionnels compétents, innovants
+      et engagés, capables de relever les défis du monde digital et technologique
+      d’aujourd’hui.
+    custom: {}
+  utter_langues_enseignement:
+  - text: Les langues d’enseignement à l’ISDI sont principalement le français et l’anglais,
+      permettant ainsi aux étudiants d’être préparés à un environnement professionnel
+      international.
+    custom: {}
+  utter_contact_reseaux:
+  - text: |-
+      Pour nous contacter ou suivre l’ISDI sur les réseaux sociaux, voici les liens officiels :
+      - Site web : www.isdi.com
+      - Facebook : @ISDI
+      - LinkedIn : ISDI
+      - Instagram : @isdi_officiel
+    custom: {}
+  utter_reconnaissance_officielle:
+  - text: L’ISDI bénéficie d’une reconnaissance officielle par le ministère de l’Éducation
+      nationale, garantissant la qualité et la validité de ses diplômes sur le territoire
+      national.
+    custom: {}
+  utter_partenariats_academiques:
+  - text: L’ISDI collabore avec plusieurs universités et écoles internationales pour
+      offrir des programmes d’échanges, des doubles diplômes et des opportunités de
+      recherche partagée.
+    custom: {}
+  utter_debouches_professionnels:
+  - text: Les diplômés de l’ISDI trouvent des débouchés dans des secteurs variés tels
+      que le marketing digital, la communication, la gestion de projets, l’analyse
+      de données, et le développement web, avec un fort taux d’employabilité.
+    custom: {}
+  utter_bourses_disponibles:
+  - text: L’ISDI propose plusieurs bourses d’études basées sur le mérite académique,
+      la situation financière, et l’engagement associatif pour aider les étudiants
+      à financer leur parcours.
+    custom: {}
+  utter_programmes_master:
+  - text: L’ISDI propose plusieurs programmes de Master spécialisés en digital, marketing,
+      data, et management pour préparer les étudiants aux métiers de demain.
+    custom: {}
+  utter_cours_distance:
+  - text: L’ISDI propose des cours à distance pour permettre aux étudiants de suivre
+      leur formation où qu’ils soient, avec un accompagnement personnalisé.
+    custom: {}
+  utter_duree_etudes:
+  - text: La durée des études à l’ISDI varie selon le programme, allant généralement
+      de 2 à 3 ans pour les formations principales.
+    custom: {}
+  utter_langues_etrangeres_enseignees:
+  - text: À l’ISDI, plusieurs langues étrangères sont enseignées, notamment l’anglais,
+      l’espagnol, et parfois l’allemand selon les programmes.
+    custom: {}
+  utter_stages_partenariats:
+  - text: L’ISDI propose des stages en entreprise grâce à ses nombreux partenariats
+      avec des sociétés leaders dans leur secteur, favorisant l’application pratique
+      des compétences.
+    custom: {}
+  utter_evenements_isdi:
+  - text: L’ISDI organise régulièrement des événements tels que des conférences, ateliers,
+      et forums pour favoriser l’échange entre étudiants, professionnels et experts
+      du secteur.
+    custom: {}
+session_configs: {}
