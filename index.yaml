@@ -7,7 +7,7 @@ entries:
           description: update rasa-action-server chart version/dependency
     apiVersion: v2
     appVersion: 3.2.6
-    created: "2024-10-30T13:10:34.5455926Z"
+    created: "2025-08-28T14:41:25.8692166Z"
     dependencies:
     - name: rasa-common
       repository: https://helm.rasa.com
@@ -36,7 +36,7 @@ entries:
       version: ~1.1.4
     description: The Rasa Helm chart deploy a Rasa Open Source Server. Rasa is an
       open source machine learning framework for automated text and voice-based conversations.
-    digest: 5107d9c83b3dc579bf5075ffda402bb134e19fe566ca6e5b6079eaba56d4486d
+    digest: dab9a2f6d1dafb1f985ea97e59500cc472d240261b30ebef8a12794ec4c9f06b
     icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZPsa-h0ilYPCFaQmf21MFMyVH7oyvrfnJHwvGOJVlMIeTiakBJTSwGd2cDFcF5AsEiY&usqp=CAU
     keywords:
     - kubernetes
@@ -47,9 +47,41 @@ entries:
       name: Rasa
     name: kauza
     sources:
-    - https://github.com/Wingrammer/helm-charts/tree/main/charts/kauza
+    - https://github.com/RasaHQ/helm-charts/tree/main/charts/rasa
     type: application
     urls:
-    - https://github.com/Wingrammer/helm-charts/raw/refs/heads/gh-pages/charts/kauza-1.17.7.tgz
+    - https://wingrammer.github.io/helm-charts/charts/charts/kauza-1.17.7.tgz
     version: 1.17.7
-generated: "2024-10-30T13:10:34.5157792Z"
+  rasa-common:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: fixed
+          description: Issue with default value not being accessed
+          links:
+            - name: Github Issue
+              url: https://github.com/RasaHQ/helm-charts/issues/40
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 1.0.2
+    created: "2025-08-28T14:41:25.8702017Z"
+    description: A Library Helm Chart for grouping common logic between rasa charts.
+    digest: 27041d3c3b0eb97d3bc35c38bc349f2ad078282aa98b120302f880f6a2136799
+    home: https://github.com/RasaHQ/charts/tree/master/charts/rasa-common
+    icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZPsa-h0ilYPCFaQmf21MFMyVH7oyvrfnJHwvGOJVlMIeTiakBJTSwGd2cDFcF5AsEiY&usqp=CAU
+    keywords:
+    - common
+    - template
+    - function
+    - rasa
+    maintainers:
+    - email: hi@rasa.com
+      name: Rasa
+    name: rasa-common
+    sources:
+    - https://github.com/RasaHQ/helm-charts/charts/rasa-common
+    - https://rasa.com/
+    type: library
+    urls:
+    - https://wingrammer.github.io/helm-charts/charts/charts/rasa-common-1.0.2.tgz
+    version: 1.0.2
+generated: "2025-08-28T14:41:25.838082Z"

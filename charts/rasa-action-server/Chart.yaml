@@ -32,7 +32,7 @@ maintainers:
 
 dependencies:
   - name: rasa-common
-    repository: C:\Users\Winner\helm-charts\charts\rasa-common-1.0.2.tgz
+    repository: https://wingrammer.github.io/helm-charts/charts
     tags:
       - rasa-common
     version: 1.x.x
