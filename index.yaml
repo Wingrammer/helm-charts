@@ -47,10 +47,10 @@ entries:
       name: Rasa
     name: kauza
     sources:
-    - https://github.com/RasaHQ/helm-charts/tree/main/charts/rasa
+    - https://github.com/Wingrammer/helm-charts/tree/main/charts/kauza
     type: application
     urls:
-    - https://wingrammer.github.io/helm-charts/charts/charts/kauza-1.17.7.tgz
+    - https://github.com/Wingrammer/helm-charts/raw/refs/heads/gh-pages/charts/kauza-1.17.7.tgz
     version: 1.17.7
   rasa-common:
   - annotations:
@@ -78,10 +78,10 @@ entries:
       name: Rasa
     name: rasa-common
     sources:
-    - https://github.com/RasaHQ/helm-charts/charts/rasa-common
+    - https://github.com/Wingrammer/helm-charts/tree/main/charts/kauza
     - https://rasa.com/
     type: library
     urls:
-    - https://wingrammer.github.io/helm-charts/charts/charts/rasa-common-1.0.2.tgz
+    - https://github.com/Wingrammer/helm-charts/raw/refs/heads/gh-pages/charts/rasa-common-1.0.2.tgz
     version: 1.0.2
 generated: "2025-08-28T14:41:25.838082Z"
