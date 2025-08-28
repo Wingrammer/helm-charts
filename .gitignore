@@ -9,3 +9,5 @@ dashboard-service-account.yml
 dashboard-cluster-role-binding.yml
 service-account-token.yml
 commands
+app
+action
